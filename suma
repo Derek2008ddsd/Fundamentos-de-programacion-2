@@ -1,0 +1,14 @@
+ #include <string>
+ using namespace std;
+ int main()
+}
+    float a,b,resultado;
+    cout<<"ingresar digito a";
+    cin>>a;
+    cout<<"ingresar digito b ";
+    cin>>b;
+    resultado=(a+b);
+    cout<<"el resultado de la suma es:" <<resultado;
+
+    return 0;
+}

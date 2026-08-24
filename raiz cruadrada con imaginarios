@@ -1,0 +1,39 @@
+#include <iostream>
+#include<cmath>
+using namespace std;
+int main()
+{
+    double x1, x2, z1, z2;
+    float a, b, c, determinante;
+    cout<<"ingrese valor a: "endl;
+    cin>>a;
+    cout<<"ingresar valor b: "endl;
+    cin>>b;
+    cout<<"ingresar valor c"endl;
+    cin>>c;
+    determinante=(b*b-4*a*c);
+    x1=(-b+sqrt(determinante))/(2*a);
+    x2=(-b-sqrt(determinante))/(2*a);
+    z1=(-b)/(2*a);
+    z2=(-b)/(2*a);
+    if(a=0)
+    {
+        cout<<"no se puede realizar";
+        else
+    
+    if (determinante>=0)
+    {
+    cout<<"es del conjunto reales";
+    cout<<"la primera raiz es:"<<x1<<endl;
+    cout<<"la segunda raiz es:"<<x2<<endl;
+    }
+    else
+    {
+    cout<<"es del conjunto irreal";
+    cout<<"la primera raiz es:"<<z1<<"*+"<<sqrt(-determinante)<<"i"<<endl;
+    cout<<"la segunda raiz es:"<<z2<<"*-"<<sqrt(-determinante)<<"i"<<endl;
+    }
+} 
+    
+    return 0;
+}

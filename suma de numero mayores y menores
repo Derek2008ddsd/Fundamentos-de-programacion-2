@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <iostream>
+using namespace std;
+int main()
+{
+    float a,b,c,d,e,menor,mayor;
+	cout << "ingrese el  primer numero: " << endl;
+	cin >> a;
+	cout << "ingrese el  primer numero: " << endl;
+	cin >> b;
+	cout << "ingrese el  primer numero: " << endl;
+	cin >> c;
+	cout << "ingrese el  primer numero: " << endl;
+	cin >> d;
+	cout << "ingrese el  primer numero: " << endl;
+	cin >> e;
+	mayor = a;
+	menor = b;
+	if (mayor<b) {
+		mayor = b;
+	}
+	if (menor>b) {
+		if (mayor<c) {
+			mayor = c;
+			if (mayor<d) {
+				mayor = d;
+			} else {
+				mayor = e;
+			}
+		}
+		menor = b;
+		if (menor>c) {
+			menor = c;
+			if (menor>d) {
+				menor = d;
+			} else {
+				menor = e;
+			}
+		}
+	}
+	cout << "el mayor es: " << mayor << endl;
+	cout << "el menor es: " << menor << endl;
+	return 0;
+}

@@ -1,0 +1,91 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    // Declaración de variables
+    float hamburguesas = 0, hamburguesaqueso = 0, papasfritas = 0, soda = 0;
+    float total = 0, cantidad = 0, precio = 0, suma = 0;
+    int opcion = 0;
+    int cantham = 0, canthamq = 0, cantpapas = 0, cantsoda = 0;
+
+    do {
+        cout << "\n--------------Menu------------" << endl;
+        cout << "1- Hamburguesas (3 Bs)" << endl;
+        cout << "2- Hamburguesas con queso (5 Bs)" << endl;
+        cout << "3- Papas fritas (2 Bs)" << endl;
+        cout << "4- Soda (2.5 Bs)" << endl;
+        cout << "0- Salir" << endl;
+        cout << "Seleccione un numero (0-4): ";
+        cin >> opcion;
+
+        // Si elige salir, rompemos el bucle antes de pedir cantidad
+        if (opcion == 0) {
+            cout << "Saliendo del sistema..." << endl;
+            break;
+        }
+
+        switch (opcion) {
+            case 1:
+                cout << "Elegiste la opcion 1 (Hamburguesas)" << endl;
+                precio = 3;
+                break;
+            case 2:
+                cout << "Elegiste la opcion 2 (Hamburguesas con queso)" << endl;
+                precio = 5;
+                break;
+            case 3:
+                cout << "Elegiste la opcion 3 (Papas fritas)" << endl;
+                precio = 2;
+                break;
+            case 4:
+                cout << "Elegiste la opcion 4 (Soda)" << endl;
+                precio = 2.5;
+                break;
+            default:
+                cout << "Opcion invalida. Intente de nuevo." << endl;
+                continue; // Vuelve al inicio del do-while
+        }
+
+        cout << "Ingrese la cantidad: ";
+        cin >> cantidad;
+
+        total = cantidad * precio;
+        suma += total;
+
+        // Acumular valores según la opción elegida
+        if (opcion == 1) {
+            hamburguesas += total;
+            cantham += cantidad;
+        } 
+        else if (opcion == 2) {
+            hamburguesaqueso += total;
+            canthamq += cantidad;
+        } 
+        else if (opcion == 3) {
+            papasfritas += total;
+            cantpapas += cantidad;
+        } 
+        else if (opcion == 4) {
+            soda += total;
+            cantsoda += cantidad;
+        }
+
+        cout << "Total de esta compra: " << total << " Bs\n";
+
+    } while (opcion != 0);
+
+    // Reporte final
+    cout << "\n==================================================" << endl;
+    cout << "                 REPORTE FINAL                    " << endl;
+    cout << "==================================================" << endl;
+    cout << "ITEM\t\t\tCANTIDAD\tTOTAL PARCIAL" << endl;
+    cout << "Hamburguesas (3Bs)\t\t" << cantham << "\t\t" << hamburguesas << " Bs" << endl;
+    cout << "Hamb. con queso (5Bs)\t\t" << canthamq << "\t\t" << hamburguesaqueso << " Bs" << endl;
+    cout << "Papas fritas (2Bs)\t\t" << cantpapas << "\t\t" << papasfritas << " Bs" << endl;
+    cout << "Soda (2.5Bs)\t\t\t" << cantsoda << "\t\t" << soda << " Bs" << endl;
+    cout << "--------------------------------------------------" << endl;
+    cout << "T O T A L  A  P A G A R:\t\t\t" << suma << " Bs" << endl;
+    cout << "==================================================" << endl;
+
+    return 0;
+}

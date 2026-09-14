@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int cont,N,suma=0;
+    cout<<"ingrese el numero de veces a repetir"<<endl;
+    cin>>N;
+    cont=1;
+    do {
+        suma=suma+cont;
+        cont++;
+    } while (cont<=N);
+    cout<<"La suma es: "<<suma;
+    return 0;
+}

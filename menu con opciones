@@ -1,0 +1,107 @@
+#include <iostream>
+#include "conio.h"
+#include "stdlib.h"
+#include "Math.h"
+
+using namespace std;
+
+float cubo(float n);
+int menor(int a, int b);
+int signo(float n);
+long potenciaIterativa(int base, int exponente);
+
+void main()
+{
+	int opcion;
+	do {
+		cout << "\t\t Menu de Ejercicios \n";
+		cout << "\t\t ================== \n";
+		cout << "1. Calcular cubo de un numero real\n";
+		cout << "2. Menor de dos numeros enteros\n";
+		cout << "3. Signo de un numero \n";
+		cout << "4. Potencia entera de forma iterativa \n";
+		cout << "0. Salir\n";
+		cout << "Opcion: ";
+		cin >> opcion;
+
+		switch (opcion)
+		{
+		case 1: {
+			float n;
+			cout << "Ingrese un numero real: ";
+			cin >> n;
+			cout << "El cubo de " << n << " es: " << cubo(n) << "\n";
+			cout << "Prueba -> El cubo de 3.2 es: " << cubo(3.2f) << "\n";
+			cout << "Prueba -> El cubo de 5 es: " << cubo(5) << "\n";
+			break;
+		}
+		case 2: {
+			int n1, n2;
+			cout << "Ingrese el primer numero entero: ";
+			cin >> n1;
+			cout << "Ingrese el segundo numero entero: ";
+			cin >> n2;
+			cout << "El menor es: " << menor(n1, n2) << "\n";
+			break;
+		}
+		case 3: {
+			float num;
+			cout << "Ingrese un numero real: ";
+			cin >> num;
+			cout << "El resultado de signo(" << num << ") es: " << signo(num) << "\n";
+			break;
+		}
+		case 4: {
+			int b, e;
+			cout << "Ingrese la base (entero): ";
+			cin >> b;
+			cout << "Ingrese el exponente (entero positivo): ";
+			cin >> e;
+			cout << b << " elevado a la " << e << " es: " << potenciaIterativa(b, e) << "\n";
+			break;
+		}
+		case 0:
+			cout << "Saliendo del Menu\n";
+			break;
+		default:
+			cout << "ERROR de opcion\n";
+			break;
+		}
+
+		_getch();
+		system("cls");
+	} while (opcion != 0);
+
+	_getch();
+}
+float cubo(float n)
+{
+	return n * n * n;
+}
+
+int menor(int a, int b)
+{
+	if (a < b)
+		return a;
+	else
+		return b;
+}
+int signo(float n)
+{
+	if (n < 0)
+		return -1;
+	else if (n > 0)
+		return 1;
+	else
+		return 0;
+}
+
+long potenciaIterativa(int base, int exponente)
+{
+	long resultado = 1;
+	for (int i = 0; i < exponente; i++)
+	{
+		resultado *= base;
+	}
+	return resultado;
+}

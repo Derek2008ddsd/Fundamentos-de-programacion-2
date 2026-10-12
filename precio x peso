@@ -1,0 +1,28 @@
+int calcularCostoEnvio(int peso) {
+    if (peso <= 2) {
+        return 15; 
+    } else if (peso <= 5) {
+        return 25; 
+    } else if (peso <= 10) {
+        return 40; 
+    } else {
+        return 60; 
+    }
+}
+
+int main() {
+    int peso;
+
+    cout << "--- EMPRESA DE TRANSPORTE (Costo de Envio) ---" << endl;
+    cout << "Ingrese el peso del paquete en kilogramos: ";
+    cin >> peso;
+
+    if (peso <= 0) {
+        cout << "El peso ingresado debe ser mayor a 0 kg." << endl;
+    } else {
+        int costo = calcularCostoEnvio(peso);
+        cout << "El costo del envio es: Bs. " << costo << endl;
+    }
+
+    return 0;
+}

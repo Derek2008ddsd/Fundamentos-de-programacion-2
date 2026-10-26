@@ -1,0 +1,58 @@
+
+#include <iostream>
+
+using namespace std;
+
+float obtenerBruto(int horas, float pagoh) {
+    return horas * pagoh;
+}
+
+float obtenerPenalizacion(float salariobruto, int atrasos) {
+    if (atrasos > 3) {
+        return salariobruto * 0.05f;
+    }
+    return 0.0f;
+}
+
+float obtenerBono(float salariobruto, float porcentajeBono) {
+    return salariobruto * (porcentajeBono / 100.0f);
+}
+
+float obtenerNeto(float salariobruto, float bono, float penalizacion) {
+    return salariobruto + bono - penalizacion;
+}
+
+int main() {
+    int horas, nombre, atrasos;
+    float salariobruto, salarioneto, pagoh;
+    float porcentajeBono, penalizacion, bono;
+
+    cout << "Ingrese el nombre del empleado " << endl;
+    cin >> nombre;
+
+    cout << "Ingrese las horas trabajadas: " << endl;
+    cin >> horas;
+
+    cout << "Ingrese el pago por hora: " << endl;
+    cin >> pagoh;
+
+    cout << "Ingrese los dias de atrasos: " << endl;
+    cin >> atrasos;
+
+    cout << "Ingrese el porcentaje de bonificacion: " << endl;
+    cin >> porcentajeBono;
+
+    salariobruto = obtenerBruto(horas, pagoh);
+    penalizacion = obtenerPenalizacion(salariobruto, atrasos);
+    bono = obtenerBono(salariobruto, porcentajeBono);
+    salarioneto = obtenerNeto(salariobruto, bono, penalizacion);
+
+    cout << endl << "--- RESULTADOS ---" << endl;
+    cout << "Nombre del empleado: " << nombre << endl;
+    cout << "Salario Bruto: " << salariobruto << endl;
+    cout << "Penalizacion: " << penalizacion << endl;
+    cout << "Bono: " << bono << endl;
+    cout << "Salario Neto: " << salarioneto << endl;
+
+    return 0;
+}
